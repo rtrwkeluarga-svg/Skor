@@ -1,0 +1,653 @@
+/*==================================================
+ ERTE5 SCOREBOARD PRO
+ DISPLAY.CSS
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#06111c;
+
+    --panel:#10243d;
+
+    --panel2:#16314f;
+
+    --primary:#00d4ff;
+
+    --text:#ffffff;
+
+    --text2:#b6d2ea;
+
+    --gold:#ffd54f;
+
+    --green:#19c37d;
+
+}
+
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:Segoe UI,Arial,sans-serif;
+
+    overflow:hidden;
+
+}
+
+.display{
+
+    width:100vw;
+
+    height:100vh;
+
+    display:grid;
+
+    grid-template-rows:90px 1fr 70px;
+
+}
+
+/*==================================================
+TOP BAR
+==================================================*/
+
+.topbar{
+
+    display:grid;
+
+    grid-template-columns:100px 1fr 160px;
+
+    align-items:center;
+
+    padding:15px 25px;
+
+    min-height:112px;
+
+    border-bottom:3px solid var(--primary);
+
+    background:transparent;
+
+}
+
+.event{
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+}
+
+.status{
+
+    font-size:26px;
+
+    color:var(--green);
+
+    font-weight:bold;
+
+}
+
+/*==================================================
+BOARD
+==================================================*/
+
+.board{
+
+    display:grid;
+
+    grid-template-columns:1fr 340px 1fr;
+
+    gap:25px;
+
+    padding:25px;
+
+}
+
+.player{
+
+    background:var(--panel);
+
+    border-radius:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.center{
+
+    background:var(--panel);
+
+    border-radius:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/*==================================================
+PLAYER
+==================================================*/
+
+.name{
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    color:var(--text);
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+    letter-spacing:1px;
+
+}
+
+.set{
+
+    font-size:28px;
+
+    color:var(--text2);
+
+    margin-bottom:25px;
+
+}
+
+.score{
+
+    font-size:420px;
+
+    font-weight:900;
+
+    color:var(--gold);
+
+    line-height:1;
+
+    text-shadow:
+
+        0 0 20px rgba(255,213,79,.25);
+
+    transition:transform .2s ease;
+
+}
+
+.score.flash{
+
+    transform:scale(1.08);
+
+}
+
+/*=================================================
+  SCORE ANIMATION
+=================================================*/
+
+.score.animate{
+
+    animation:scorePop .35s ease;
+
+}
+
+@keyframes scorePop{
+
+    0%{
+
+        transform:scale(1);
+
+        text-shadow:none;
+
+    }
+
+    35%{
+
+        transform:scale(1.18);
+
+        text-shadow:
+            0 0 20px #00d4ff,
+            0 0 50px #00d4ff;
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        text-shadow:none;
+
+    }
+
+}
+
+/*==================================================
+SERVE INDICATOR
+==================================================*/
+
+.serve{
+
+    height:40px;
+
+    margin-top:25px;
+
+    font-size:34px;
+
+    color:var(--green);
+
+}
+
+/*==================================================
+CENTER PANEL
+==================================================*/
+
+.timer{
+
+    font-size:72px;
+
+    font-weight:bold;
+
+    color:var(--primary);
+
+    margin-bottom:30px;
+
+    letter-spacing:2px;
+
+}
+
+.currentSet{
+
+    font-size:34px;
+
+    font-weight:bold;
+
+    color:var(--text2);
+
+}
+
+/*==================================================
+FOOTER
+==================================================*/
+
+.footer{
+
+    background:var(--panel);
+
+    border-top:3px solid var(--primary);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 35px;
+
+    font-size:24px;
+
+}
+
+#clock{
+
+    font-weight:bold;
+
+    color:var(--primary);
+
+}
+
+/*==================================================
+RESPONSIVE
+==================================================*/
+
+@media(max-width:1400px){
+
+    .score{
+
+        font-size:140px;
+
+    }
+
+    .timer{
+
+        font-size:56px;
+
+    }
+
+    .name{
+
+        font-size:34px;
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .board{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .topbar{
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        gap:10px;
+
+        padding:15px;
+
+        height:auto;
+
+    }
+
+    .display{
+
+        grid-template-rows:auto 1fr 60px;
+
+    }
+
+    .score{
+
+        font-size:110px;
+
+    }
+
+    .timer{
+
+        font-size:44px;
+
+    }
+
+    .footer{
+
+        font-size:18px;
+
+    }
+
+}
+
+/*=========================================
+SERVER ACTIVE
+=========================================*/
+
+.player.activeServe{
+
+    border:6px solid #19c37d;
+
+    box-shadow:
+        0 0 20px #19c37d,
+        0 0 60px rgba(25,195,125,.5);
+
+    transition:.25s;
+
+}
+
+.player.activeServe .name{
+
+    color:#19c37d;
+
+}
+
+.player.activeServe .score{
+
+    transform:scale(1.05);
+
+}
+
+/*=========================================
+HEADER LEFT
+=========================================*/
+
+.headerLeft{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.logo{
+
+    width:70px;
+
+    height:70px;
+
+    object-fit:contain;
+
+}
+
+/*=========================================
+HEADER
+=========================================*/
+
+.topbar{
+
+    background:#10243d;
+
+    display:grid;
+
+    grid-template-columns:120px 1fr 180px;
+
+    align-items:center;
+
+    padding:10px 25px;
+
+    border-bottom:4px solid #00d4ff;
+
+}
+
+.headerLogo{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.logo{
+
+    width:120px;
+
+    height:120px;
+
+    object-fit:contain;
+
+    padding-bottom:30px;
+
+}
+
+.headerCenter{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.organizer{
+
+    font-size:20px;
+
+    color:#ff0404;
+
+    font-weight:bold;
+
+}
+
+.event{
+
+    font-size:34px;
+
+    font-weight:900;
+
+    color:rgb(247, 248, 248);
+
+}
+
+.category{
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#00c3ff;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    margin-bottom:30px;
+
+    font-weight:bold;
+
+
+
+}
+
+.status{
+
+    text-align:right;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    color:#9eff01;
+
+}
+
+/*=================================================
+OVERLAY
+=================================================*/
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(3px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:9999;
+
+}
+
+.overlay.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.overlayTitle{
+
+    font-size:90px;
+
+    font-weight:900;
+
+    color:#FFD700;
+
+    text-shadow:
+
+        0 0 20px #FFD700,
+
+        0 0 60px #FFD700;
+
+    animation:overlayZoom .5s;
+
+}
+
+.overlayPlayer{
+
+    margin-top:20px;
+
+    font-size:60px;
+
+    font-weight:bold;
+
+    color:white;
+
+}
+
+@keyframes overlayZoom{
+
+    from{
+
+        transform:scale(.5);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+.overlayScore{
+
+    margin-top:20px;
+
+    font-size:52px;
+
+    font-weight:bold;
+
+    color:#ffffff;
+
+}
+
+
+body.mirror{
+
+    transform:scaleX(-1);
+
+}

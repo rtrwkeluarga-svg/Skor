@@ -1,0 +1,264 @@
+/*==================================================
+ERTE5 SCOREBOARD PRO
+INDEX.CSS
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#07131f;
+    --card:#10243d;
+    --primary:#00d4ff;
+    --primaryHover:#20e0ff;
+    --text:#ffffff;
+    --text2:#9eb7d0;
+    --danger:#ff5252;
+
+}
+
+body{
+
+    font-family:Segoe UI,Arial,sans-serif;
+
+    background:linear-gradient(
+        135deg,
+        #06111c,
+        #0d2036
+    );
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    color:var(--text);
+
+}
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,
+    rgba(0,212,255,.12),
+    transparent 55%);
+
+    z-index:-1;
+
+}
+
+.container{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
+
+.card{
+
+    width:500px;
+
+    background:var(--card);
+
+    border-radius:20px;
+
+    padding:45px;
+
+    text-align:center;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.45);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo{
+
+    width:130px;
+
+    height:130px;
+
+    object-fit:contain;
+
+    margin-bottom:20px;
+
+}
+
+h1{
+
+    font-size:52px;
+
+    letter-spacing:2px;
+
+    margin-bottom:10px;
+
+}
+
+h2{
+
+    color:var(--primary);
+
+    font-size:24px;
+
+    margin-bottom:15px;
+
+}
+
+p{
+
+    color:var(--text2);
+
+    margin-bottom:35px;
+
+    font-size:16px;
+
+}
+
+.menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+button{
+
+    height:58px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:.25s;
+
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.primary{
+
+    background:var(--primary);
+
+    color:#00131b;
+
+}
+
+.primary:hover{
+
+    background:var(--primaryHover);
+
+}
+
+.secondary{
+
+    background:#24425f;
+
+    color:white;
+
+}
+
+.secondary:hover{
+
+    background:#30567d;
+
+}
+
+.ghost{
+
+    background:transparent;
+
+    color:var(--text2);
+
+    border:1px solid rgba(255,255,255,.2);
+
+}
+
+.ghost:hover{
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.footer{
+
+    margin-top:35px;
+
+    color:#7f97ad;
+
+    font-size:14px;
+
+}
+
+/*=============================
+RESPONSIVE
+=============================*/
+
+@media(max-width:600px){
+
+.card{
+
+    width:100%;
+
+    padding:30px;
+
+}
+
+.logo{
+
+    width:100px;
+
+    height:100px;
+
+}
+
+h1{
+
+    font-size:42px;
+
+}
+
+h2{
+
+    font-size:20px;
+
+}
+
+button{
+
+    height:54px;
+
+    font-size:16px;
+
+}
+
+}

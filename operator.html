@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ERTE5 Scoreboard Pro - Operator</title>
+
+    <link rel="stylesheet"
+          href="css/operator.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ========================================= -->
+    <!-- HEADER                                    -->
+    <!-- ========================================= -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <h1>
+
+                ERTE5 SCOREBOARD PRO
+
+            </h1>
+
+            <span>
+
+                Operator Panel
+
+            </span>
+
+        </div>
+
+        <div class="connection">
+
+            Display :
+
+            <span id="connectionStatus"
+                  class="offline">
+
+                OFFLINE
+
+            </span>
+
+        </div>
+
+    </header>
+
+
+    <!-- ========================================= -->
+    <!-- MATCH SETUP                               -->
+    <!-- ========================================= -->
+    
+    <!-- ==================================================
+EVENT INFORMATION
+================================================== -->
+
+<section class="card">
+
+    <h2>Event Information</h2>
+
+    <div class="form-group">
+
+        <label>Organizer</label>
+
+        <input
+            type="text"
+            id="organizerInput"
+            value="KARANG TARUNA RT5 RW12">
+
+    </div>
+
+    <div class="form-group">
+
+        <label>Event Name</label>
+
+        <input
+            type="text"
+            id="eventInput"
+            value="PERLOMBAAN TENIS MEJA">
+
+    </div>
+
+    <div class="form-group">
+
+        <label>Subtitle</label>
+
+        <input
+            type="text"
+            id="subtitleInput"
+            value="HUT RI KE-81 TAHUN 2026">
+
+    </div>
+
+    <div class="form-group">
+
+        <label>Logo</label>
+
+        <input
+            type="file"
+            id="logoInput"
+            accept="image/*">
+
+    </div>
+
+</section>
+
+    <section class="setup-card">
+
+        <h2>
+
+            MATCH SETUP
+
+        </h2>
+
+        <div class="setup-grid">
+
+            <div class="form-group">
+
+                <label>
+
+                    Sport
+
+                </label>
+
+                <select id="sportSelect">
+
+                    <option value="badminton">
+
+                        Bulutangkis
+
+                    </option>
+
+                    <option value="tabletennis">
+
+                        Tenis Meja
+
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+
+                    Best Of
+
+                </label>
+
+                <select id="bestOfSelect">
+
+                    <option value="3">
+
+                        Best Of 3
+
+                    </option>
+
+                    <option value="5">
+
+                        Best Of 5
+
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+
+                    PLAYER A
+
+                </label>
+
+                <input
+                    type="text"
+                    id="playerAName"
+                    value="PLAYER A">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+
+                    PLAYER B
+
+                </label>
+
+                <input
+                    type="text"
+                    id="playerBName"
+                    value="PLAYER B">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+
+                    First Serve
+
+                </label>
+
+                <select id="serveSelect">
+
+                    <option value="A">
+
+                        Player A
+
+                    </option>
+
+                    <option value="B">
+
+                        Player B
+
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+
+                    Match Status
+
+                </label>
+
+                <input
+                    type="text"
+                    id="matchStatus"
+                    value="READY"
+                    readonly>
+
+            </div>
+
+            <div class="form-group">
+    <label>
+        <input type="checkbox" id="mirrorDisplay">
+        Mirror Display
+    </label>
+</div>
+
+<div class="form-group">
+    <label>
+        <input type="checkbox" id="flipDisplay">
+        Flip Display (Kiri ↔ Kanan)
+    </label>
+</div>
+
+        </div>
+
+        <div class="setup-action">
+
+            <button
+                id="startMatch"
+                class="btn btn-primary">
+
+                START MATCH
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- CONTROL AREA                              -->
+    <!-- ========================================= -->
+
+    <section class="control-grid">
+
+        <!-- ========================================= -->
+        <!-- PLAYER A                                  -->
+        <!-- ========================================= -->
+
+        <div class="player-card">
+
+            <h2>PLAYER A</h2>
+
+            <div class="score-box">
+
+                <span id="scoreA">
+
+                    0
+
+                </span>
+
+            </div>
+
+            <div class="set-box">
+
+                Set :
+
+                <span id="setA">
+
+                    0
+
+                </span>
+
+            </div>
+
+            <div class="button-group">
+
+                <button
+                    id="plusA"
+                    class="btn btn-success">
+
+                    +1
+
+                </button>
+
+                <button
+                    id="minusA"
+                    class="btn btn-danger">
+
+                    -1
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- ========================================= -->
+        <!-- CONTROL PANEL                             -->
+        <!-- ========================================= -->
+
+        <div class="center-card">
+
+            <h2>
+
+                CONTROL PANEL
+
+            </h2>
+
+            <div class="timer-box">
+
+                <span id="timer">
+
+                    00:00
+
+                </span>
+
+            </div>
+
+            <div class="button-column">
+
+                <button
+                    id="startTimer"
+                    class="btn btn-primary">
+
+                    ▶ START TIMER
+
+                </button>
+
+                <button
+                    id="stopTimer"
+                    class="btn btn-warning">
+
+                    ■ STOP TIMER
+
+                </button>
+
+                <button
+                    id="resetTimer"
+                    class="btn">
+
+                    RESET TIMER
+
+                </button>
+
+                <button
+                    id="undo"
+                    class="btn">
+
+                    UNDO
+
+                </button>
+
+                <button
+                    id="nextSet"
+                    class="btn">
+
+                    NEXT SET
+
+                </button>
+
+                <button
+                    id="resetMatch"
+                    class="btn btn-danger">
+
+                    RESET MATCH
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- ========================================= -->
+        <!-- PLAYER B                                  -->
+        <!-- ========================================= -->
+
+        <div class="player-card">
+
+            <h2>
+
+                PLAYER B
+
+            </h2>
+
+            <div class="score-box">
+
+                <span id="scoreB">
+
+                    0
+
+                </span>
+
+            </div>
+
+            <div class="set-box">
+
+                Set :
+
+                <span id="setB">
+
+                    0
+
+                </span>
+
+            </div>
+
+            <div class="button-group">
+
+                <button
+                    id="plusB"
+                    class="btn btn-success">
+
+                    +1
+
+                </button>
+
+                <button
+                    id="minusB"
+                    class="btn btn-danger">
+
+                    -1
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- MATCH INFO                                 -->
+    <!-- ========================================= -->
+
+    <section class="history-card">
+
+        <h2>
+
+            MATCH HISTORY
+
+        </h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+
+                        Set
+
+                    </th>
+
+                    <th>
+
+                        Player A
+
+                    </th>
+
+                    <th>
+
+                        Player B
+
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="historyBody">
+
+                <tr>
+
+                    <td>
+
+                        1
+
+                    </td>
+
+                    <td>
+
+                        -
+
+                    </td>
+
+                    <td>
+
+                        -
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/sync.js"></script>
+<script src="js/operator.js"></script>
+
+</body>
+
+</html>

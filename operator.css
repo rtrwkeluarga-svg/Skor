@@ -1,0 +1,618 @@
+/*==================================================
+ERTE5 SCOREBOARD PRO
+OPERATOR.CSS
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#07131f;
+
+    --card:#10243d;
+
+    --card2:#16314f;
+
+    --primary:#00d4ff;
+
+    --success:#19c37d;
+
+    --warning:#ffb300;
+
+    --danger:#e53935;
+
+    --text:#ffffff;
+
+    --text2:#9eb7d0;
+
+    --border:#294867;
+
+}
+
+body{
+
+    background:var(--bg);
+
+    font-family:Segoe UI,Arial,sans-serif;
+
+    color:var(--text);
+
+    min-height:100vh;
+
+}
+
+.app{
+
+    width:95%;
+
+    max-width:1600px;
+
+    margin:25px auto;
+
+}
+
+/*==================================================
+TOP BAR
+==================================================*/
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:var(--card);
+
+    padding:20px 30px;
+
+    border-radius:15px;
+
+    margin-bottom:20px;
+
+    border:1px solid var(--border);
+
+}
+
+.brand h1{
+
+    font-size:32px;
+
+    margin-bottom:6px;
+
+}
+
+.brand span{
+
+    color:var(--text2);
+
+}
+
+.connection{
+
+    font-size:18px;
+
+    font-weight:bold;
+
+}
+
+.online{
+
+    color:var(--success);
+
+}
+
+.offline{
+
+    color:var(--danger);
+
+}
+
+/*==================================================
+CARD
+==================================================*/
+
+.setup-card,
+
+.history-card,
+
+.player-card,
+
+.center-card{
+
+    background:var(--card);
+
+    border-radius:15px;
+
+    border:1px solid var(--border);
+
+    box-shadow:
+
+        0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.setup-card{
+
+    padding:25px;
+
+    margin-bottom:20px;
+
+}
+
+.setup-card h2{
+
+    margin-bottom:20px;
+
+    color:var(--primary);
+
+}
+
+.history-card{
+
+    padding:25px;
+
+    margin-top:20px;
+
+}
+
+.history-card h2{
+
+    margin-bottom:20px;
+
+    color:var(--primary);
+
+}
+
+/*==================================================
+MATCH SETUP
+==================================================*/
+
+.setup-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.form-group label{
+
+    margin-bottom:8px;
+
+    color:var(--text2);
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+.form-group input,
+
+.form-group select{
+
+    height:48px;
+
+    padding:0 14px;
+
+    border-radius:10px;
+
+    border:1px solid var(--border);
+
+    background:var(--card2);
+
+    color:var(--text);
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.2s;
+
+}
+
+.form-group input:focus,
+
+.form-group select:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 10px rgba(0,212,255,.25);
+
+}
+
+.form-group input[readonly]{
+
+    background:#203b57;
+
+    color:#cfe6ff;
+
+}
+
+.setup-action{
+
+    margin-top:25px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+}
+
+/*==================================================
+CONTROL GRID
+==================================================*/
+
+.control-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 420px 1fr;
+
+    gap:20px;
+
+    align-items:stretch;
+
+}
+
+/*==================================================
+PLAYER CARD
+==================================================*/
+
+.player-card{
+
+    padding:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.player-card h2{
+
+    margin-bottom:25px;
+
+    color:var(--primary);
+
+}
+
+.score-box{
+
+    width:100%;
+
+    text-align:center;
+
+    padding:25px;
+
+    background:var(--card2);
+
+    border-radius:15px;
+
+    border:1px solid var(--border);
+
+}
+
+.score-box span{
+
+    font-size:120px;
+
+    font-weight:bold;
+
+    color:#ffd54f;
+
+    line-height:1;
+
+}
+
+.set-box{
+
+    margin-top:20px;
+
+    font-size:26px;
+
+    font-weight:bold;
+
+}
+
+/*==================================================
+BUTTON GROUP
+==================================================*/
+
+.button-group{
+
+    display:flex;
+
+    gap:15px;
+
+    width:100%;
+
+    margin-top:30px;
+
+}
+
+.button-group button{
+
+    flex:1;
+
+}
+
+/*==================================================
+CENTER PANEL
+==================================================*/
+
+.center-card{
+
+    padding:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.center-card h2{
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.timer-box{
+
+    width:100%;
+
+    background:var(--card2);
+
+    border:1px solid var(--border);
+
+    border-radius:15px;
+
+    padding:20px;
+
+    margin-bottom:25px;
+
+    text-align:center;
+
+}
+
+.timer-box span{
+
+    font-size:56px;
+
+    font-weight:bold;
+
+    color:#19c37d;
+
+    letter-spacing:2px;
+
+}
+
+.button-column{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    width:100%;
+
+}
+
+/*==================================================
+BUTTON
+==================================================*/
+
+.btn{
+
+    height:50px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    background:#294867;
+
+    color:white;
+
+    transition:all .2s ease;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-2px);
+
+    filter:brightness(1.08);
+
+}
+
+.btn:active{
+
+    transform:scale(.97);
+
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:#00131b;
+
+}
+
+.btn-success{
+
+    background:var(--success);
+
+}
+
+.btn-warning{
+
+    background:var(--warning);
+
+    color:#222;
+
+}
+
+.btn-danger{
+
+    background:var(--danger);
+
+}
+
+/*==================================================
+MATCH HISTORY
+==================================================*/
+
+.history-card table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.history-card th{
+
+    background:var(--card2);
+
+    padding:14px;
+
+    text-align:center;
+
+    border:1px solid var(--border);
+
+}
+
+.history-card td{
+
+    padding:14px;
+
+    text-align:center;
+
+    border:1px solid var(--border);
+
+}
+
+.history-card tbody tr:nth-child(even){
+
+    background:rgba(255,255,255,.03);
+
+}
+
+/*==================================================
+SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0d2036;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#35597e;
+
+    border-radius:10px;
+
+}
+
+/*==================================================
+RESPONSIVE
+==================================================*/
+
+@media(max-width:1200px){
+
+.control-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.setup-grid{
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.app{
+
+    width:98%;
+
+}
+
+.topbar{
+
+    flex-direction:column;
+
+    gap:15px;
+
+    text-align:center;
+
+}
+
+.setup-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.score-box span{
+
+    font-size:80px;
+
+}
+
+.timer-box span{
+
+    font-size:42px;
+
+}
+
+.button-group{
+
+    flex-direction:column;
+
+}
+
+}
